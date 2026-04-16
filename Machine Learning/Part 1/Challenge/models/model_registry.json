@@ -1,0 +1,35 @@
+{
+  "GradientBoosting": {
+    "display_name": "Gradient Boosting",
+    "description": "Sequential boosting trees",
+    "metrics": {
+      "r2_score": 0.8029220038868184,
+      "mae_dzd": 19301.954815610403,
+      "train_rows": 13026,
+      "test_rows": 3257
+    },
+    "file": "D:\\Programming\\AI\\Workshops\\Machine Learning\\Part 1\\Challenge\\models\\bundle_GradientBoosting.joblib"
+  },
+  "SVR": {
+    "display_name": "Support Vector Regression",
+    "description": "Non-linear margin regression",
+    "metrics": {
+      "r2_score": 0.7825557091613042,
+      "mae_dzd": 20509.843979960842,
+      "train_rows": 13026,
+      "test_rows": 3257
+    },
+    "file": "D:\\Programming\\AI\\Workshops\\Machine Learning\\Part 1\\Challenge\\models\\bundle_SVR.joblib"
+  },
+  "XGBoost": {
+    "display_name": "XGBoost",
+    "description": "Extreme gradient boosting",
+    "metrics": {
+      "r2_score": 0.8073313471542687,
+      "mae_dzd": 18764.21418861059,
+      "train_rows": 13026,
+      "test_rows": 3257
+    },
+    "file": "D:\\Programming\\AI\\Workshops\\Machine Learning\\Part 1\\Challenge\\models\\bundle_XGBoost.joblib"
+  }
+}

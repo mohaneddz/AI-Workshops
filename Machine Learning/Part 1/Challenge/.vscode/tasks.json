@@ -1,0 +1,20 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "run-laptop-fastapi",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-m",
+				"app.main"
+			],
+			"options": {
+				"cwd": "d:\\Programming\\AI\\Workshops\\Machine Learning\\Part 1\\Challenge"
+			},
+			"isBackground": true,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

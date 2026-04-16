@@ -1,0 +1,72 @@
+# Algerian Laptop Market — Data Mining Project
+# Python 3.8+ recommended
+
+# =============================================================================
+# Core Data Manipulation and Analysis
+# =============================================================================
+pandas>=1.3.0
+numpy>=1.20.0
+
+# =============================================================================
+# Visualization
+# =============================================================================
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# =============================================================================
+# Geospatial Data
+# =============================================================================
+# Used in: 02_EDA.ipynb (Wilaya geographic visualization)
+geopandas>=0.10.0
+
+# =============================================================================
+# Statistical Analysis
+# =============================================================================
+scipy>=1.7.0
+
+# =============================================================================
+# Machine Learning (scikit-learn)
+# =============================================================================
+# Used in: 01_Preprocessing.ipynb, 02_EDA.ipynb, 03_Regression.ipynb
+scikit-learn>=1.0.0
+# Components used:
+#   - model_selection: train_test_split, TimeSeriesSplit, cross_val_score, learning_curve
+#   - preprocessing: StandardScaler, RobustScaler, OneHotEncoder
+#   - linear_model: LinearRegression, Ridge, Lasso
+#   - ensemble: RandomForestRegressor, GradientBoostingRegressor
+#   - svm: SVR
+#   - cluster: KMeans
+#   - metrics: mean_squared_error, mean_absolute_error, r2_score, mean_absolute_percentage_error
+#   - impute: SimpleImputer
+#   - compose: ColumnTransformer
+#   - pipeline: Pipeline
+
+# =============================================================================
+# Association Rule Mining
+# =============================================================================
+# Used in: 05_Association_Rules.ipynb
+mlxtend>=0.21.0
+# Components used:
+#   - frequent_patterns: apriori, association_rules
+#   - preprocessing: TransactionEncoder
+
+# =============================================================================
+# Jupyter Environment
+# =============================================================================
+jupyter>=1.0.0
+notebook>=6.4.0
+
+# =============================================================================
+# Optional but Recommended
+# =============================================================================
+jupyterlab>=3.0.0
+
+# =============================================================================
+# Web App
+# =============================================================================
+fastapi>=0.110.0
+uvicorn[standard]>=0.29.0
+jinja2>=3.1.0
+python-multipart>=0.0.9
+joblib>=1.3.0
+

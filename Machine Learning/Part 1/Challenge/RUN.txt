@@ -1,0 +1,32 @@
+Algerian Laptop Market Challenge
+===============================
+
+Quick workflow
+--------------
+1. Create and activate a virtual environment:
+   python -m venv venv
+   venv\Scripts\activate   (Windows)
+   source venv/bin/activate (Mac/Linux)
+
+2. Install dependencies:
+   pip install -r requirements.txt
+
+3. Preprocess data in notebook:
+   tasks/01_Preprocessing.ipynb
+
+4. Save preprocessing output as:
+   data/data_preprocessed.csv
+
+5. Train all models:
+   python train.py
+
+6. (Optional) Start FastAPI server:
+   python -m app.main
+
+7. Open in browser:
+   http://127.0.0.1:1234
+
+Notes
+-----
+- `train.py` requires `data/data_preprocessed.csv`.
+- `tasks/02_EDA.ipynb` is optional and does not replace preprocessing output.
