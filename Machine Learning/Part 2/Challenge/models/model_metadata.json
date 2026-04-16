@@ -1,0 +1,33 @@
+{
+  "rows": 25000,
+  "feature_columns": [
+    "time_s",
+    "amount",
+    "V1",
+    "V2",
+    "V3",
+    "V4",
+    "V5",
+    "V6",
+    "V7",
+    "V8"
+  ],
+  "default_model": "isolation_forest",
+  "models": {
+    "z_score": {
+      "name": "Z-Score",
+      "description": "Statistical distance using feature z-scores",
+      "score_threshold": 4.701463229631031
+    },
+    "isolation_forest": {
+      "name": "Isolation Forest",
+      "description": "Tree-based anomaly isolation",
+      "score_threshold": 0.00021017192339645163
+    },
+    "lof": {
+      "name": "Local Outlier Factor",
+      "description": "Local neighborhood density outlier detection",
+      "score_threshold": 0.0003155864191126678
+    }
+  }
+}

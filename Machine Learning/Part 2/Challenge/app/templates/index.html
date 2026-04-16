@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Global Network Anomaly Monitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>Global Network Anomaly Monitor</h1>
+        <p>Live stream plus ingest API for probabilistic good/bad traffic simulation.</p>
+      </div>
+      <div class="meta-cards">
+        <div class="card">
+          <span>Model</span>
+          <select id="modelSelect">
+            {% for item in model_options %}
+            <option value="{{ item.key }}" {% if item.key == active_model %}selected{% endif %}>{{ item.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="card"><span>Rows Trained</span><strong>{{ meta.rows }}</strong></div>
+        <div class="card"><span>Threshold</span><strong id="thresholdCard">{{ "%.4f"|format(meta.models[active_model]["score_threshold"]) }}</strong></div>
+      </div>
+    </header>
+
+    <main class="content-grid">
+      <section class="map-panel">
+        <div class="panel-head">
+          <h2>Realtime Global Connections</h2>
+          <button id="refreshBtn" type="button">Refresh Now</button>
+        </div>
+        <div id="map"></div>
+      </section>
+
+      <section class="feed-panel">
+        <h2>Live Alert Feed</h2>
+        <div class="stats">
+          <div><span>Total Events</span><strong id="totalEvents">0</strong></div>
+          <div><span>Anomalies</span><strong id="anomalyCount">0</strong></div>
+          <div><span>Last Poll</span><strong id="lastPoll">-</strong></div>
+          <div><span>Passed Requests</span><strong id="passedRequests">0</strong></div>
+          <div><span>Anomalies Classified</span><strong id="anomaliesClassified">0</strong></div>
+          <div><span>Unclassified</span><strong id="unclassified">0</strong></div>
+          <div><span>Good Misclassified</span><strong id="goodMisclassified">0</strong></div>
+          <div>
+            <span>Metrics</span>
+            <button id="resetMetricsBtn" type="button">Reset Counters</button>
+          </div>
+        </div>
+        <div id="eventsTableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Path</th>
+                <th>Score</th>
+                <th>Flag</th>
+              </tr>
+            </thead>
+            <tbody id="eventsBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
